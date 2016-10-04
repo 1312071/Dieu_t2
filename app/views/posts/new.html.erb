@@ -1,0 +1,26 @@
+<h1>Add a New Post </h1>
+<%= link_to "My Blog", posts_path %>   
+<%= bootstrap_form_for @post do |f| %>
+	<% if @post.errors.any? %>
+	<h2>Error:</h2>
+	<ul>
+		<% @post.errors.full_messages.each do |message| %>
+			<li><%= message %> </li>
+		<% end %>
+	</ul>
+	<% end %>
+	<p>
+		
+		<%= f.text_field(:userid ,:value => session[:user_id] , :readonly => true) %>
+	</p>
+	<p>
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		<%= f.text_area :content, rows: 10 %>
+	</p>
+
+	<p>
+		<%= f.submit "Add a New Post" %>
+	</p>
+<% end %>

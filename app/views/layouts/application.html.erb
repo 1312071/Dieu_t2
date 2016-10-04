@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'  %>
+  </head>
+
+  <body>
+    <% if flash[:notice] %>
+      <div id= "notice"><%= flash[:notice] %></div>
+    <% end %>
+    
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="nav navbar-nav">
+          <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="/users/new">Create user</a>
+        </div>
+        <form class="form-inline pull-xs-right">
+          <input class="form-control" type="text" placeholder="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </nav>
+      <div class="container">
+        <div class= "row">
+          <div class="col-sm-8">
+         
+          <%= yield %>
+          </div>
+        <div class="col-sm-4">
+          <div class="sidebar">
+            
+          </div>
+        </div>
+    </div>
+  </body>
+</html>

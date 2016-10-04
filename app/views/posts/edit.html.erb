@@ -1,0 +1,23 @@
+<h1>Edit Post </h1>
+
+<%= bootstrap_form_for @post do |f| %>
+	<% if @post.errors.any? %>
+	<h2>Error:</h2>
+	<ul>
+		<% @post.errors.full_messages.each do |message| %>
+			<li><%= message %> </li>
+		<% end %>
+	</ul>
+	<% end %>
+	<p>
+		
+		<%= f.text_field :title %>
+	</p>
+	<p>
+		
+		<%= f.text_area :content, rows: 10 %>
+	</p>
+	<p>
+		<%= f.submit "Update post" %><br />
+	</p>
+<% end %>

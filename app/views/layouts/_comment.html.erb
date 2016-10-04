@@ -1,0 +1,6 @@
+<h3>Comments</h3>
+<% @comments.each do |comment| %>
+	<p><%= markdown(comment.ccontent) %> </p>
+<% end %>
+
+<%= render 'layouts/form' %>

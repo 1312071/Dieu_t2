@@ -1,0 +1,5 @@
+<%= link_to "My Blog", posts_path %>   
+<h1><%= @post.title %> </h1>
+<p> <%= markdown(@post.content) %></p>
+
+<%= render 'layouts/comment' %>
